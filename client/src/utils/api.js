@@ -1,4 +1,4 @@
-let rawBase = import.meta.env.VITE_API_URL || ''
+let rawBase = import.meta.env.VITE_API_URL || 'https://teamproof-api-r7f3.onrender.com'
 if (rawBase && !rawBase.startsWith('http://') && !rawBase.startsWith('https://')) {
   rawBase = `https://${rawBase}`
 }
