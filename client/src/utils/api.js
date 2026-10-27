@@ -1,4 +1,4 @@
-const API_BASE = '' // Use same-origin relative URL so Render proxies /api/* directly to backend
+const API_BASE = 'https://teamproof-api-r7f3.onrender.com'
 
 export async function api(endpoint, options = {}) {
   const token = localStorage.getItem('teamproof_token')
