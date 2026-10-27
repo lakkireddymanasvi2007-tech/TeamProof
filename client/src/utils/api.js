@@ -1,4 +1,8 @@
-const API_BASE = import.meta.env.VITE_API_URL || '' // Uses VITE_API_URL in production, falls back to relative path for dev proxy
+let rawBase = import.meta.env.VITE_API_URL || ''
+if (rawBase && !rawBase.startsWith('http://') && !rawBase.startsWith('https://')) {
+  rawBase = `https://${rawBase}`
+}
+const API_BASE = rawBase.replace(/\/+$/, '')
 
 export async function api(endpoint, options = {}) {
   const config = {
