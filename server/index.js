@@ -24,29 +24,12 @@ connectDB();
 const app = express();
 
 // Core Middlewares
-const allowedOrigins = [
-  process.env.CLIENT_URL,
-  'http://localhost:5173',
-  'http://localhost:3000'
-].filter(Boolean);
-
 app.use(
   cors({
-    origin: function (origin, callback) {
-      // allow requests with no origin (like mobile apps or curl requests)
-      if (!origin) return callback(null, true);
-      // Allow exact match or any onrender.com frontend domain
-      if (
-        allowedOrigins.includes(origin) ||
-        allowedOrigins.includes(origin.replace(/\/+$/, '')) ||
-        (process.env.CLIENT_URL && origin.includes(process.env.CLIENT_URL.replace(/^https?:\/\//, ''))) ||
-        origin.endsWith('.onrender.com')
-      ) {
-        return callback(null, true);
-      }
-      return callback(null, true); // Permissive in deployment with credentials
-    },
-    credentials: true
+    origin: true,
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
   })
 );
 app.use(cookieParser());

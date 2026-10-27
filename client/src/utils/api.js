@@ -5,8 +5,11 @@ if (rawBase && !rawBase.startsWith('http://') && !rawBase.startsWith('https://')
 const API_BASE = rawBase.replace(/\/+$/, '')
 
 export async function api(endpoint, options = {}) {
+  const token = localStorage.getItem('teamproof_token')
+  const authHeader = token ? { Authorization: `Bearer ${token}` } : {}
+
   const config = {
-    headers: { 'Content-Type': 'application/json', ...options.headers },
+    headers: { 'Content-Type': 'application/json', ...authHeader, ...options.headers },
     credentials: 'include',
     ...options,
   }
@@ -31,6 +34,10 @@ export async function api(endpoint, options = {}) {
 
   if (!data.success) {
     throw new Error(data.error || 'Something went wrong')
+  }
+
+  if (data.token) {
+    localStorage.setItem('teamproof_token', data.token)
   }
 
   return data.data

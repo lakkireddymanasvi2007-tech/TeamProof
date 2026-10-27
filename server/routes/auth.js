@@ -58,6 +58,7 @@ router.post(
 
     res.status(201).json({
       success: true,
+      token,
       data: {
         _id: user._id,
         name: user.name,
@@ -108,6 +109,7 @@ router.post(
 
     res.status(200).json({
       success: true,
+      token,
       data: {
         _id: user._id,
         name: user.name,
