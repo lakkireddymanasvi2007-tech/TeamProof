@@ -8,6 +8,17 @@ TeamProof is a contribution-aware collaboration and career-proof platform for co
 
 ---
 
+## 🎬 Project Video Walkthrough
+
+[![Watch TeamProof Demo Walkthrough](https://img.shields.io/badge/▶_Watch_Demo_Video-Google_Drive-4285F4?style=for-the-badge&logo=googledrive&logoColor=white)](https://drive.google.com/file/d/186gTtVTOYG3kaiuALaP-vOF7thoDqV26/view?usp=drivesdk)
+
+> 🎥 **[Click here to watch the full TeamProof Walkthrough Video](https://drive.google.com/file/d/186gTtVTOYG3kaiuALaP-vOF7thoDqV26/view?usp=drivesdk)**
+> 
+> *Live Deployed Web App:* **[https://teamproof-web-54b5.onrender.com](https://teamproof-web-54b5.onrender.com)**  
+> *Backend API Service:* **[https://teamproof-api-r7f3.onrender.com](https://teamproof-api-r7f3.onrender.com)**
+
+---
+
 ## Table of Contents
 
 - [Product Overview](#product-overview)
