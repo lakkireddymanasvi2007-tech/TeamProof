@@ -1,4 +1,4 @@
-const API_BASE = '' // proxy handles it
+const API_BASE = import.meta.env.VITE_API_URL || '' // Uses VITE_API_URL in production, falls back to relative path for dev proxy
 
 export async function api(endpoint, options = {}) {
   const config = {
