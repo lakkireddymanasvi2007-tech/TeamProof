@@ -1,8 +1,4 @@
-let rawBase = import.meta.env.VITE_API_URL || 'https://teamproof-api-r7f3.onrender.com'
-if (rawBase && !rawBase.startsWith('http://') && !rawBase.startsWith('https://')) {
-  rawBase = `https://${rawBase}`
-}
-const API_BASE = rawBase.replace(/\/+$/, '')
+const API_BASE = '' // Use same-origin relative URL so Render proxies /api/* directly to backend
 
 export async function api(endpoint, options = {}) {
   const token = localStorage.getItem('teamproof_token')
