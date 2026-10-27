@@ -18,16 +18,13 @@ services:
       - key: JWT_SECRET
         generateValue: true
       - key: CLIENT_URL
-        fromService:
-          type: web
-          name: teamproof-web
-          property: host
+        value: https://teamproof-web-54b5.onrender.com
 
   # Frontend Static Site
   - type: web
     name: teamproof-web
     runtime: static
-    
+    plan: free
     rootDir: client
     buildCommand: npm install && npm run build
     staticPublishPath: dist
@@ -37,7 +34,4 @@ services:
         destination: /index.html
     envVars:
       - key: VITE_API_URL
-        fromService:
-          type: web
-          name: teamproof-api
-          property: host
+        value: https://teamproof-api-r7f3.onrender.com
